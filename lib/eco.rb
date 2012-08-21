@@ -1,5 +1,5 @@
 require "coffee_script"
-require "eco/source"
+require "source"
 require "execjs"
 
 module Eco
