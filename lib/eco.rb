@@ -37,8 +37,8 @@ module Eco
 
     def compile(template)
       template = template.read if template.respond_to?(:read)
+      # Contiamo improvement (we don't care about line breaks in generated html)
       Source.context.call("eco.precompile", template)
-        # Contiamo improvement (we don't care about line breaks in generated html)
         .gsub(/__out\.push\('\s*\\n\s*'\);/, "")
         .gsub(/\s*\\n\s*/, "\n\s")
         .gsub(/\s+/, "\s")
